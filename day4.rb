@@ -17,3 +17,15 @@ end
 
 pp res
 
+ind=0
+res=0
+while b=a.index("A",ind) do
+  ind=b+1
+  if [a[b-147],a[b],a[b+147]] == ["M","A","S"] || [a[b+147],a[b],a[b-147]] == ["M","A","S"]
+    if [a[b-145],a[b],a[b+145]] == ["M","A","S"] || [a[b+145],a[b],a[b-145]] == ["M","A","S"]
+      res+=1
+    end
+  end
+end
+
+pp res
