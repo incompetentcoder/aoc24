@@ -21,3 +21,25 @@ end
 
 pp solutions
 
+solutions=0
+a.each do |x|
+  ["+","*","|"].repeated_permutation(x.length-2).each do |y|
+    val=x[1]
+    (x.length-2).times do |z|
+      case y[z]
+      when "*"
+        val=val*x[z+2]
+      when "+"
+        val=val+x[z+2]
+      when "|"
+        val=(val.to_s+x[z+2].to_s).to_i
+      end
+    end
+    if val==x[0]
+      solutions+=x[0]
+      break
+    end
+  end
+end
+
+pp solutions
